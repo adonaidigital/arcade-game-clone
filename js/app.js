@@ -92,10 +92,15 @@ class Hero {
     update() {
         for(let enemy of allEnemies) {
             if(this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x + this.step/2)) {
-            alert('collide');
+            this.reset();
             }
-           //console.log(this.y, enemy.y);
+           
         }
+    }
+    // Reset Hero to the starting point
+    reset(){
+      this.x = this.beginX;
+      this.y = this.beginY; 
     }
 }
 const player = new Hero();
