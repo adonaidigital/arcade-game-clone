@@ -23,13 +23,50 @@ Enemy.prototype.render = function() {
 
 class Hero { 
     constructor () {
-      this.x = 0;
-      this.y = 0;
+      this.step = 101;
+      this.jump = 83;
+      this.beginX = this.step * 2;
+      this.beginY = (this.jump * 5) - 20;
+      this.x = this.beginX;
+      this.y = this.beginY;
       this.sprite =  'images/char-boy.png';
        }
-// Now write your own player class
+
 // This class requires an update(), render() and
-// a handleInput() method.
+    handleInput(key) {
+        if (key === 'left'){
+            if (this.x > 0){
+            this.x -= this.step;
+        } else {
+            this.x += 0;
+           }
+        }
+        
+        if (key === 'up'){
+            if (this.y > 0){
+            this.y -= this.jump;
+        } else {
+            this.y += 0;
+          }
+        }
+
+        if (key === 'right'){
+            if (this.x < this.step * 4){
+            this.x += this.step;
+        } else {
+            this.x += 0;
+          }
+        }
+
+        if (key === 'down'){
+            if (this.y < this.jump * 4){
+            this.y += this.jump;
+        } else {
+            this.y += 0;
+          }
+        }
+    } 
+
     render() {
        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);  
     }
