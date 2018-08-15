@@ -35,7 +35,7 @@ Enemy.prototype.render = function() {
 };
 const enemy1 = new Enemy(-101, 0, 150);
 const enemy2 = new Enemy(-101, 83, 250);
-const enemy3 = new Enemy((-101*2), 83, 350);
+const enemy3 = new Enemy((-101*2), 166, 350);
 const allEnemies = [];
 allEnemies.push(enemy1, enemy2, enemy3);
 
@@ -44,7 +44,7 @@ class Hero {
       this.step = 101;
       this.jump = 83;
       this.beginX = this.step * 2;
-      this.beginY = (this.jump * 5) - 20;
+      this.beginY = (this.jump * 4) + 55;
       this.x = this.beginX;
       this.y = this.beginY;
       this.sprite =  'images/char-boy.png';
@@ -87,6 +87,15 @@ class Hero {
 
     render() {
        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);  
+    }
+
+    update() {
+        for(let enemy of allEnemies) {
+            if(this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x + this.step/2)) {
+            alert('collide');
+            }
+           //console.log(this.y, enemy.y);
+        }
     }
 }
 const player = new Hero();
