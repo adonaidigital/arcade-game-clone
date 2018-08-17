@@ -32,8 +32,8 @@ Enemy.prototype.render = function() {
 // Variables applied to each of our instances go here
 // Place all enemy objects in an array called allEnemies
 const enemy1 = new Enemy(-101, 0, 150);
-const enemy2 = new Enemy(-101, 83, 250);
-const enemy3 = new Enemy((-101*2), 166, 350);
+const enemy2 = new Enemy((-101*2), 166, 350);
+const enemy3 = new Enemy(-101, 83, 250);
 const allEnemies = [];
 allEnemies.push(enemy1, enemy2, enemy3);
 
@@ -114,10 +114,6 @@ class Hero {
 const player = new Hero();
 // Now instantiate your objects.
 
-
-
-
-
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
@@ -130,3 +126,11 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+/*
+Referenced 
+Matthew Cranford Arcade Game Walkthrough Part 1-6, 
+live webinar Arcade Game (P3) with Rodrick Bloomfield 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance
+*/

@@ -24,7 +24,7 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime,
         myReq;
-    /*
+    
     const modal = document.querySelector('.modalBg');
     const replay = document.querySelector('.modalBtn');
     replay.addEventListener('click', ()=> {
@@ -33,7 +33,7 @@ var Engine = (function(global) {
         player.won = false;
         win.requestAnimationFrame(main);
     }); 
-    */   
+       
         
 
     canvas.width = 505;
@@ -69,8 +69,7 @@ var Engine = (function(global) {
          */
         if(player.won === true) {
             win.cancelAnimationFrame(myReq);
-            //modal.classList.toggle('hide')
-            alert('I won');  
+            modal.classList.toggle('hide'); 
            } else {
        myReq = win.requestAnimationFrame(main);
         //win.cancelAnimationFrame(main);
