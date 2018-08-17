@@ -8,7 +8,7 @@
 
 * Game is won when you reach the river.
 
-* Game ends once you get hit and modal pops up showing a replay button.
+* Player goes to default position once he collides with the enemy bugs.
 
 ## Controls
 * Use the keys Up, Down, Left and Right to navigate the board.
