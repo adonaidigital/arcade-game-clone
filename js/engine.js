@@ -22,7 +22,19 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime;
+        lastTime,
+        myReq;
+    /*
+    const modal = document.querySelector(modalBg);
+    const replay = document.querySelector(modalBtn);
+    replay.addEventListener('click', ()=> {
+        modal.classList.toggle('hide');
+        player.reset();
+        player.won = false;
+        win.requestAnimationFrame(main);
+    }); 
+    */   
+        
 
     canvas.width = 505;
     canvas.height = 606;
@@ -55,7 +67,14 @@ var Engine = (function(global) {
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
          */
-        win.requestAnimationFrame(main);
+        if(player.won === true) {
+            win.cancelAnimationFrame(myReq);
+            //modal.classList.toggle('hide')
+            alert('I won');  
+           } else {
+       myReq = win.requestAnimationFrame(main);
+        //win.cancelAnimationFrame(main);
+        }
     }
 
     /* This function does some initial setup that should only occur once,
@@ -82,6 +101,11 @@ var Engine = (function(global) {
         // checkCollisions();
     }
 
+
+    // function checkCollisions(){
+
+
+    // }
     /* This is called by the update function and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
      * their update() methods. It will then call the update function for your
@@ -161,6 +185,11 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
+        // allEnemies.forEach(function(enemy) {
+        //     enemy.reset();
+        // });
+
+        // player.reset();
         // noop
     }
 
