@@ -24,7 +24,11 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime,
         myReq;
-    
+
+        /*
+        Eventlistener added to the Modal to trigger game reset 
+        and also draw another frame for a new game
+       */
     const modal = document.querySelector('.modalBg');
     const replay = document.querySelector('.modalBtn');
     replay.addEventListener('click', ()=> {
@@ -33,9 +37,8 @@ var Engine = (function(global) {
         player.won = false;
         win.requestAnimationFrame(main);
     }); 
-       
-        
 
+    
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
@@ -102,8 +105,6 @@ var Engine = (function(global) {
 
 
     // function checkCollisions(){
-
-
     // }
     /* This is called by the update function and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
@@ -143,6 +144,9 @@ var Engine = (function(global) {
         
         // Before drawing, clear existing canvas
         ctx.clearRect(0,0,canvas.width,canvas.height)
+        // ctx.fillText("Level 1: ", 505, 606);
+        // ctx.font = "20px Arial";
+        // ctx.textBaseline = "middle";
 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
@@ -201,6 +205,7 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
+        'images/Rock.png',
         'images/char-boy.png'
     ]);
     Resources.onReady(init);
