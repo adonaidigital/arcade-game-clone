@@ -38,7 +38,6 @@ var Engine = (function(global) {
         win.requestAnimationFrame(main);
     }); 
 
-    
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
@@ -100,12 +99,22 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        //checkCollisions();
     }
 
+    /*
+     function checkCollisions(){
+        let enemy = {x: enemy.x, y: enemy.y, height: 50, width: 50};
+        let player ={x: this.x, y: this.y, height: 50, width: 50};
+            if(player.x < enemy.x + enemy.width && 
+               player.y < enemy.y + enemy.height && 
+               player.x + player.width > enemy.x &&
+               player.y + player.height > enemy.y){
+               player.reset();
+        }
+     }
+     */
 
-    // function checkCollisions(){
-    // }
     /* This is called by the update function and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
      * their update() methods. It will then call the update function for your

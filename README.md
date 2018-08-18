@@ -7,9 +7,14 @@ For detailed instructions on how to get started, check out this [guide](https://
 
 
 # The Frogger Clone
-* [How to Play](#instructions )
+* [How to Run the Game](#instructions)
+* [How to Play](#instructions)
 * [Controls](#controls)
 
+## How to Run the Game
+* Download the game from my [repository](https://github.com/adonaidigital/arcade-game-clone). 
+
+* Unzip and open the index.html file of the game in your browser.
 
 ## How to Play
 * Get to the river at the top of the board without getting hit.
