@@ -12,7 +12,7 @@ For detailed instructions on how to get started, check out this [guide](https://
 * [Controls](#controls)
 
 ## How to Run the Game
-* Download the game from my [repository](https://github.com/adonaidigital/arcade-game-clone). 
+* Download or clone the game from my [repository](https://github.com/adonaidigital/arcade-game-clone). 
 
 * Unzip and open the index.html file of the game in your browser.
 
@@ -21,7 +21,7 @@ For detailed instructions on how to get started, check out this [guide](https://
 
 * Game is won when you reach the river.
 
-* Player goes to default position once he collides with the enemy bugs.
+* Player goes to default position once he collides with the Rocks.
 
 ## Controls
 * Use the keys Up, Down, Left and Right to navigate the board.

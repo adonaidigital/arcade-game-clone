@@ -81,9 +81,12 @@ class Hero {
     //To update player's position after collision
     update() {
         for(let enemy of allEnemies) {
+            debugger
                  if(this.y === enemy.y && 
-                   (enemy.x + enemy.step/2 > this.x && 
-                    enemy.x < this.x + this.step/2)) {
+                   (enemy.x + enemy.step*0.65 > this.x && 
+                    enemy.x < this.x + this.step*0.75)){
+                           
+                        
             //alert('collided')  this code is to checkCollision
               this.reset();
             }
@@ -106,7 +109,7 @@ const player = new Hero();
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', (e) => {
-    var allowedKeys = {
+    let allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
