@@ -16,6 +16,8 @@ For detailed instructions on how to get started, check out this [guide](https://
 
 * Unzip and open the index.html file of the game in your browser.
 
+* You can also play [here](https://adonaidigital.github.io/arcade-game-clone/)
+
 ## How to Play
 * Get to the river at the top of the board without getting hit.
 

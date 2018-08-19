@@ -30,6 +30,7 @@ class Enemy {
     }
     // Variables applied to each of our instances go here
     // Place all enemy objects in an array called allEnemies
+    // Now instantiate your objects.
     const allEnemies = [
         new Enemy(-101, 0, 150),
         new Enemy(-101, 83, 200),
@@ -51,7 +52,7 @@ class Hero {
         this.won = false;
         }
 
-// This method handles the input
+// This method handles the input (the player movement)
     handleInput(key) {
         if (key === 'left'){
             if (this.x > 0){this.x -= this.step;}
@@ -81,12 +82,9 @@ class Hero {
     //To update player's position after collision
     update() {
         for(let enemy of allEnemies) {
-            debugger
                  if(this.y === enemy.y && 
                    (enemy.x + enemy.step*0.65 > this.x && 
-                    enemy.x < this.x + this.step*0.75)){
-                           
-                        
+                    enemy.x < this.x + this.step*0.75)){          
             //alert('collided')  this code is to checkCollision
               this.reset();
             }
@@ -104,7 +102,6 @@ class Hero {
    }
 // Place the player object in a variable called player
 const player = new Hero();
-// Now instantiate your objects.
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -115,7 +112,6 @@ document.addEventListener('keyup', (e) => {
         39: 'right',
         40: 'down'
     };
-
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
